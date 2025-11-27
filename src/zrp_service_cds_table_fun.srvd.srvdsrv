@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service FOR cds TABLE FUNCTION'
+define service ZRP_SERVICE_CDS_TABLE_FUN {
+  expose ZRP_CDS_TABLE;
+}

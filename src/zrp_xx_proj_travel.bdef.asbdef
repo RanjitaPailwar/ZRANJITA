@@ -1,0 +1,30 @@
+projection;
+strict ( 2 );
+
+
+define behavior for ZRP_XX_PROJ_TRAVEL alias Travel
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Booking { create; }
+}
+
+define behavior for ZRP_XX_PROJ_BOOKING alias Booking
+{
+  use update;
+  use delete;
+
+  use association _Travel;
+  use association _BookingSupplement { create; }
+}
+
+define behavior for ZRP_XX_PROJ_BOOKSUP alias BookingSupplement
+{
+  use update;
+  use delete;
+
+  use association _Travel;
+  use association _Booking;
+}

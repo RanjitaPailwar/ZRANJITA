@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service'
+define service ZRP_SERVICE {
+  expose ZC_SALES;
+}
