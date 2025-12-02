@@ -79,7 +79,8 @@ annotate view ZRP_XX_PROJ_TRAVEL with
   ]
   @UI.selectionField: [{ position: 10}]
   //    Also want to give this field as a line Item
-  @UI.lineItem: [{  position: 10}]
+  @UI.lineItem: [{  position: 10},
+                  {  type:#FOR_ACTION, label: 'Copy Travel', dataAction: 'copyTravel'}]
   @UI.identification: [{ position: 10 }]
   TravelId;
   @UI.selectionField: [{ position: 20}]

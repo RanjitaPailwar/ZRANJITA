@@ -4,7 +4,7 @@ CLASS zrp_xx_eml DEFINITION
   CREATE PUBLIC .
 
   PUBLIC SECTION.
-    DATA: lv_oper TYPE c VALUE 'U'.
+    DATA: lv_oper TYPE c VALUE 'C'.
     INTERFACES if_oo_adt_classrun .
   PROTECTED SECTION.
   PRIVATE SECTION.
@@ -37,7 +37,7 @@ CLASS zrp_xx_eml IMPLEMENTATION.
       WHEN 'C'.
         DATA(lv_description) = 'RAP with Ranjita'.
         DATA(lv_Agency) = '070016'.
-        DATA(lv_customer) = '000697'.
+        DATA(lv_customer) = '000699'.
 
         MODIFY ENTITIES OF zrp_xx_travel
         ENTITY Travel

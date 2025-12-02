@@ -1,18 +1,21 @@
-managed implementation in class zbp_rp_xx_travel unique;
+managed ;
 strict ( 2 );
 
 define behavior for ZRP_XX_TRAVEL alias Travel
+//make the Behavior pool implementation for travel
+implementation in class zbp_rp_xx_travel unique
 persistent table /dmo/travel_m
 lock master
 authorization master ( instance )
 etag master LastChangedAt
+early numbering
 {
   create ( authorization : global );
   update;
   delete;
   field ( readonly : update ) TravelId;
   association _Booking { create; }
-
+  factory action copyTravel[1];
   mapping for /dmo/travel_m{
      TravelId = travel_id;
      AgencyId = agency_id;
@@ -33,10 +36,13 @@ etag master LastChangedAt
 }
 
 define behavior for ZRP_XX_BOOKING alias Booking
+//make the Behavior pool implementation for the Booking
+implementation in class zbp_rp_xx_booking unique
 persistent table /dmo/booking_m
 lock dependent by _Travel
 authorization dependent by _Travel
 etag master LastChangedAt
+early numbering
 {
   update;
   delete;
@@ -62,10 +68,13 @@ etag master LastChangedAt
 }
 
 define behavior for ZRP_XX_BOOKSUPPL alias BookingSupplement
+//make the Behavior pool implementation for BookingSupplement
+implementation in class zbp_rp_xx_BookingSuppl unique
 persistent table /dmo/booksuppl_m
 lock dependent by _Travel
 authorization dependent by _Travel
 etag master LastChangedAt
+early numbering
 {
   update;
   delete;

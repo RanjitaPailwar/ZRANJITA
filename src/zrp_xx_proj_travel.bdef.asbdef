@@ -8,6 +8,8 @@ define behavior for ZRP_XX_PROJ_TRAVEL alias Travel
   use update;
   use delete;
 
+  use action copyTravel;
+
   use association _Booking { create; }
 }
 

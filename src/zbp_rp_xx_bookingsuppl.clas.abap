@@ -1,0 +1,5 @@
+CLASS zbp_rp_xx_bookingsuppl DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zrp_xx_travel.
+ENDCLASS.
+
+CLASS zbp_rp_xx_bookingsuppl IMPLEMENTATION.
+ENDCLASS.
