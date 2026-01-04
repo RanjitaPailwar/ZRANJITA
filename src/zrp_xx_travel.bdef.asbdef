@@ -15,7 +15,7 @@ early numbering
   delete;
   field ( readonly : update ) TravelId;
   association _Booking { create; }
-  factory action copyTravel[1];
+    factory action copyTravel[1];
   mapping for /dmo/travel_m{
      TravelId = travel_id;
      AgencyId = agency_id;
